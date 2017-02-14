@@ -16,7 +16,7 @@ function guess() {
       setMessage("You Win! :)");
       showAnswer(true);
       showReplay();
-    } else if (attempt.value > 9) {
+    } else if (attempt.value >= 10) {
       setMessage("You Lose! :)");
       showAnswer(false);
       showReplay();
@@ -69,7 +69,6 @@ function getResults(input) {
 
 function showAnswer(success) {
   let code = document.getElementById('code');
-  code.innerHTML = answer.value;
   if (success) {
     code.className += ' success';
   } else {
